@@ -1,0 +1,66 @@
+body {
+    font: 16px 'Roboto', sans-serif;
+    background: #06283d;
+}
+
+#wrapper {
+    background: #f0f0f0;
+    border-radius: 10px;
+    margin: 40px auto;
+    padding: 20px;
+    width: 400px;
+    // height: 400px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form {
+    position: relative;
+
+    &__location {
+        font-size: 16px;
+        border-radius: 10px;
+        margin-left: -30px;
+        padding: 6px 40px 6px 30px;
+        border: none;
+    }
+    &__submit {
+        background: none;
+        border: 0;
+    }
+    .icon {
+        width: 25px;
+        height: 25px;
+        vertical-align: middle;
+        position: relative;
+        z-index: 2;
+    }
+    .icon-gps {
+        margin-top: -3px;
+    }
+    .icon-search {
+        position: absolute;
+        top: 1px;
+        right: 15px;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.current {
+    // display: none;
+
+    img {
+        vertical-align: middle;
+    }
+}
+
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }

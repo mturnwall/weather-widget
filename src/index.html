@@ -11,17 +11,52 @@
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
+        <svg style="display: none">
+            <symbol id="icon-gps" viewBox="0 0 32 32">
+                <path
+                    d="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16.125c-3.383 0-6.125-2.742-6.125-6.125s2.742-6.125 6.125-6.125 6.125 2.742 6.125 6.125-2.742 6.125-6.125 6.125zM12.125 10c0-2.14 1.735-3.875 3.875-3.875s3.875 1.735 3.875 3.875c0 2.14-1.735 3.875-3.875 3.875s-3.875-1.735-3.875-3.875z"
+                ></path>
+            </symbol>
+            <symbol id="icon-search" viewBox="0 0 32 32">
+                <path
+                    d="M16 4c-6.617 0-12 5.383-12 12s5.383 12 12 12 12-5.383 12-12-5.383-12-12-12zM21.707 21.707c-0.181 0.181-0.431 0.293-0.707 0.293s-0.526-0.112-0.707-0.293l-2.677-2.677c-0.872 0.607-1.954 0.97-3.121 0.97-3.040 0-5.505-2.465-5.505-5.505s2.465-5.505 5.505-5.505c3.040 0 5.505 2.465 5.505 5.505 0 1.167-0.363 2.248-0.982 3.139l0.012-0.018 2.677 2.678c0.181 0.181 0.293 0.431 0.293 0.707s-0.112 0.526-0.293 0.707v0z"
+                ></path>
+                <path
+                    d="M18 14.5c0 1.933-1.567 3.5-3.5 3.5s-3.5-1.567-3.5-3.5c0-1.933 1.567-3.5 3.5-3.5s3.5 1.567 3.5 3.5z"
+                ></path>
+            </symbol>
+        </svg>
         <div id="wrapper">
+            <form action="" class="search-form" method="post">
+                <svg class="icon icon-gps">
+                    <use xlink:href="#icon-gps"></use>
+                </svg>
+                <input
+                    type="text"
+                    class="search-form__location"
+                    placeholder="Enter location"
+                />
+                <button type="submit" class="search-form__submit">
+                    <svg class="icon icon-search">
+                        <use xlink:href="#icon-search"></use>
+                    </svg>
+                </button>
+            </form>
             <section class="current">
                 <h1 class="current__location">Santee</h1>
-                <div class="current__temp">78</div>
-                <div class="current__condition">Cloudy</div>
+                <div class="current__temp">
+                    <span class="current__temp-value"></span>°
+                </div>
+                <div class="current__condition"></div>
                 <div class="current__temp-range">
-                    <span class="current__high">H: 80°</span>
-                    <span class="current__low">L: 64°</span>
+                    <span class="current__high"
+                        >H: <span class="current__high-value"></span>°</span
+                    >
+                    <span class="current__low"
+                        >L: <span class="current__low-value"></span>°</span
+                    >
                 </div>
             </section>
         </div>

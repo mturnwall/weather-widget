@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -35,12 +36,19 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Custom template',
+            // Load a custom template (lodash by default)
+            template: './src/index.html',
+        }),
+    ],
     output: {
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
     devServer: {
-        static: './dist',
+        static: './src',
     },
 };
