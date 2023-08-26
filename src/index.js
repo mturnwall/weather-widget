@@ -1,13 +1,14 @@
 import './styles/main.scss';
 
-const APIKey = '823287a432f34f33bbd52844232008';
+import {APIKey} from './constants';
+import { createForecast, forecastAPI } from './forecast';
+
 const currentConditionsAPI = `http://api.weatherapi.com/v1/current.json?key=${APIKey}`;
-const forecastAPI = `http://api.weatherapi.com/v1/forecast.json?key=${APIKey}`;
+
 
 const getCurrentConditions = (location) => {
     return fetch(`${forecastAPI}&q=${location}&days=1&aqi=no&alerts=no`)
         .then((response) => {
-            console.log(response);
             if (response.status === 200) {
                 return response.json();
             }
@@ -17,6 +18,7 @@ const getCurrentConditions = (location) => {
 
 const writeCurrentConditions = (location) => {
     const gettingConditions = getCurrentConditions(location);
+    const currentEl = document.querySelector('.current');
     gettingConditions.then((weatherData) => {
         const currentWeather = weatherData.current;
         const forecast = weatherData.forecast.forecastday[0];
@@ -42,6 +44,7 @@ const writeCurrentConditions = (location) => {
         const tempLowEl = document.querySelector('.current__low-value');
         tempHighEl.innerHTML = Math.round(forecast.day.maxtemp_f);
         tempLowEl.innerHTML = Math.round(forecast.day.mintemp_f);
+        // currentEl.classList.toggle('showWeather');
     });
 };
 
@@ -52,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function loadPageEvents() {
             '.search-form__location',
         );
         writeCurrentConditions(locationValue.value);
+        createForecast(locationValue.value);
         evt.preventDefault();
     });
 
