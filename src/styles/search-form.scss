@@ -1,0 +1,40 @@
+.search-form {
+    position: relative;
+    color: #000;
+
+    &__location {
+        font-size: 1.5rem;
+        border-radius: 10px;
+        // margin-left: -30px;
+        padding: 6px 40px 6px 40px;
+        border: none;
+        width: 100%;
+    }
+    &__submit {
+        background: none;
+        border: 0;
+    }
+    .icon {
+        width: 35px;
+        height: 35px;
+        vertical-align: middle;
+        position: absolute;
+        z-index: 2;
+    }
+    .icon-gps {
+        top: 4px;
+    }
+    .icon-search {
+        position: absolute;
+        top: 1px;
+        right: 5px;
+        width: 40px;
+        height: 40px;
+    }
+    button {
+        transition: 250ms;
+        &:hover {
+            color: #3badf4;
+        }
+    }
+}

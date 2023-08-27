@@ -1,0 +1,21 @@
+.weather-tiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.weather-tile {
+    // border: 1px solid rgba(255, 255, 255, 0.2);
+    background: #031A28;
+    padding: 10px;
+    border-radius: 10px;
+
+    &__header {
+        font-size: .7rem;
+        font-weight: 400;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    &__value {
+        font-size: 1.5rem;
+    }
+}

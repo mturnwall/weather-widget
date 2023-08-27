@@ -38,6 +38,9 @@
                     class="search-form__location"
                     placeholder="Enter your city or zip code"
                 />
+                <!-- <div class="autocomplete">
+
+                </div> -->
                 <button type="submit" class="search-form__submit">
                     <svg class="icon icon-search">
                         <use xlink:href="#icon-search"></use>
@@ -49,7 +52,10 @@
                 <div class="current__temp">
                     <span class="current__temp-value"></span>°
                 </div>
-                <div class="current__condition"></div>
+                <div class="current__condition">
+                    <span class="current__condition-text"></span>
+                    <span class="current__condition-icon"></span>
+                </div>
                 <div class="current__temp-range">
                     <span class="current__high"
                         >H: <span class="current__high-value"></span>°</span
@@ -60,6 +66,22 @@
                 </div>
             </section>
             <section class="day-forecast"></section>
+            <section class="weather-tiles">
+                <div class="weather-tile weather-tile--uv-index">
+                    <h1 class="weather-tile__header">UV Index</h1>
+                    <div class="weather-tile__value">5</div>
+                    <span class="weather-tile__text">Low</span>
+                </div>
+                <div class="weather-tile weather-tile--humidity">
+                    <h1 class="weather-tile__header">Humidity</h1>
+                    <div class="weather-tile__value">74%</div>
+                </div>
+                <div class="weather-tile weather-tile--wind">
+                    <h1 class="weather-tile__header">Wind</h1>
+                    <div class="weather-tile__value">2</div>
+                    <span class="weather-tile__text">mph</span>
+                </div>
+            </section>
         </div>
     </body>
 </html>
